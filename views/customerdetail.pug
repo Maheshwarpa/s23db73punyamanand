@@ -1,0 +1,20 @@
+extends layout
+block content
+ h1= title
+ - let customerid = toShow._id
+ - let customer_type = toShow.Cust_Name
+ - let customercost = toShow.Cust_Age
+ - let customersize = toShow.Mail_Id
+    div
+        div.row
+            div(class='customerAttr mr-3') Customer ID is:
+            div #{customerid}
+        div.row
+            div(class='customerAttr mr-3') Customer Name is:
+            div #{customer_type}
+        div.row
+            div(class='customerAttr mr-3') Customer Mail Id is:
+            div #{customersize}
+        div.row
+            div(class='customerAttr mr-3') Customer Cost is:
+            div #{customercost}

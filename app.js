@@ -42,7 +42,7 @@ console.log("Connection to DB succeeded")});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Customer', customerRouter);
+app.use('/customer', customerRouter);
 app.use('/Board', boardRouter);
 app.use('/Selector', selectorRouter);
 app.use('/resource', resourceRouter);
@@ -107,7 +107,7 @@ async function recreateDB(){
   // console.log("First object saved")
   // });
   }
-  let reseed = true;
+  let reseed = false;
   if (reseed) { recreateDB();}
 
 
