@@ -8,5 +8,12 @@ a {
 }
 .customerAttr {
   background-color: aquamarine;
+  color: gold;
   width: 120px;
+ }
+ h2 {
+  color: gold;
+ }
+ h1 {
+  color: blue;
  }

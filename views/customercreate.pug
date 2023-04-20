@@ -2,7 +2,10 @@ extends layout
 
 block content
     h1= title
-    form(id='CustomerForm', action="/resource/customer/", method="POST")
+    if (toShow == null)
+        h2 No instance to delete
+    else
+     form(id='CustomerForm', action="/resource/customer/", method="POST")
         div.form-group
             label.customerAttr(for='Cust_Name') Customer Name
             input#Cust_Name(type='text', name='Cust_Name')
@@ -13,7 +16,7 @@ block content
             label.customerAttr(for='Mail_Id') Customer Mail_Id
             input#Mail_Id(type='text', name='Mail_Id')
         input(type="submit")
-    script.
+     script.
         document.forms['CustomerForm'].addEventListener('submit', (event) => {
             event.preventDefault();
             // TODO do something here to show user that form is being submitted

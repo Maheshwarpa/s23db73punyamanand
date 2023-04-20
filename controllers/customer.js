@@ -98,7 +98,7 @@ exports.customer_view_one_Page = async function(req, res) {
     try{
     result = await customer.findById( req.query.id)
     res.render('customerdetail',
-   { title: 'customer Detail', toShow: result });
+   { title: 'Customer Detail', toShow: result });
     }
     catch(err){
     res.status(500)

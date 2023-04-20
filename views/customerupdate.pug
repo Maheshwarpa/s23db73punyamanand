@@ -2,16 +2,19 @@ extends layout
 
 block content
     h1= title
-    - let customerid = toShow._id
-    - let Cust_age = toShow.Cust_age
-    - let Mail_Id = toShow.Mail_Id
-    - let Cust_Name = toShow.Cust_Name
+    if (toShow == null)
+        h2 No instance to delete
+    else
+     - let customerid = toShow._id
+     - let Cust_age = toShow.Cust_age
+     - let Mail_Id = toShow.Mail_Id
+     - let Cust_Name = toShow.Cust_Name
 
-    div.row(class='mb-2')
+     div.row(class='mb-2')
         div.mr-1 ID is
         div #{customerid}
-    - let actionid = "/resource/customer/" + customerid
-    form(id='CustomerForm', action= actionid, method="PUT")
+     - let actionid = "/resource/customer/" + customerid
+     form(id='CustomerForm', action= actionid, method="PUT")
         div.form-group
             label.customerAttr(for='Cust_Name') Costume type
             input#Cust_Name(type='text', name='Cust_Name', value= customer_Cust_Name )
@@ -22,7 +25,7 @@ block content
             label.customerAttr(for='Mail_Id') Customer Mail_Id
             input#Mail_Id(type='text', name='Mail_Id', value= customerMailId )
         input(type="submit")
-    script.
+     script.
         document.forms['CustomerForm'].addEventListener('submit', (event) => {
             event.preventDefault();
             // TODO do something here to show user that form is being submitted

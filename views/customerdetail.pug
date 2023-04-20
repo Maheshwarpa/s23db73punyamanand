@@ -1,20 +1,23 @@
 extends layout
 block content
  h1= title
- - let customerid = toShow._id
- - let customer_type = toShow.Cust_Name
- - let customercost = toShow.Cust_Age
- - let customersize = toShow.Mail_Id
+ if (toShow == null)
+        h2 No instance to delete
+ else
+  - let customerid = toShow._id
+  - let Cust_Name = toShow.Cust_Name
+  - let Cust_Age = toShow.Cust_Age
+  - let Mail_Id = toShow.Mail_Id
     div
         div.row
             div(class='customerAttr mr-3') Customer ID is:
             div #{customerid}
         div.row
             div(class='customerAttr mr-3') Customer Name is:
-            div #{customer_type}
+            div #{Cust_Name}
         div.row
-            div(class='customerAttr mr-3') Customer Mail Id is:
-            div #{customersize}
+            div(class='customerAttr mr-3') Customer Age is:
+            div #{Cust_Age}
         div.row
-            div(class='customerAttr mr-3') Customer Cost is:
-            div #{customercost}
+            div(class='customerAttr mr-3') Customer MailID is:
+            div #{Mail_Id}
