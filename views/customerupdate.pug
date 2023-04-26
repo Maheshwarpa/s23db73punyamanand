@@ -8,7 +8,7 @@ block content
     else
      
      - let customerid = toShow._id
-     - let Cust_age = toShow.Cust_age
+     - let Cust_Age = toShow.Cust_Age
      - let Mail_Id = toShow.Mail_Id
      - let Cust_Name = toShow.Cust_Name
      
@@ -19,18 +19,17 @@ block content
      - let actionid = "/resource/customer/" + customerid
      form(id='CustomerForm', action= actionid, method="PUT")
         div.form-group
-            label.customerAttr(for='Cust_Name') Costume type
-            input#Cust_Name(type='text', name='Cust_Name', value= customer_Cust_Name )
+            label.customerAttr(for='Cust_Name') Customer Name
+            input#Cust_Name(type='text', name='Cust_Name', value= Cust_Name )
         div.form-group
-            label.customerAttr(for='Cust_age') Customer age
-            input#Cust_age(type='number', name='Cust_age', value= customerCust_Age )
+            label.customerAttr(for='Cust_Age') Customer age
+            input#Cust_Age(type=number, name='Cust_Age', value= Cust_Age )
         div.form-group
             label.customerAttr(for='Mail_Id') Customer Mail_Id
-            input#Mail_Id(type='text', name='Mail_Id', value= customerMailId )
+            input#Mail_Id(type='text', name='Mail_Id', value= Mail_Id )
         input(type="submit")
-     
-     script.
-        document.forms['CustomerForm'].addEventListener('submit', (event) => {
+        script.
+         document.forms['CustomerForm'].addEventListener('submit', (event) => {
             event.preventDefault();
             // TODO do something here to show user that form is being submitted
             fetch(event.target.action, {
@@ -40,9 +39,8 @@ block content
                 return resp.json(); // or resp.text() or whatever the server sends
             }).then((body) => {
                 alert("Update succeded")
-            // TODO handle body
             }).catch((error) => {
             // TODO handle error
                 alert("Update failed " + error )
             });
-        });
+         });
