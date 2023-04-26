@@ -17,6 +17,5 @@ router.get('/detail', customer_controller.customer_view_one_Page);
 router.get('/create', customer_controller.customer_create_Page);
 /* GET delete costume page */
 router.get('/delete', customer_controller.customer_delete_Page);
-router.get('/delete', secured, customer_controller.customer_delete_Page);
 router.get('/update', secured, customer_controller.customer_update_Page);
 module.exports = router;

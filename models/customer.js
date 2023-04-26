@@ -6,8 +6,10 @@ const customerSchema = mongoose.Schema({
     min:1,
     max:100
     },
-    Mail_Id:String,
-    match:/^[a-zA-Z]+$/
+    Mail_Id:{
+        type:String,
+        match:/^[a-zA-Z]+$/
+    }
 })
 module.exports = mongoose.model("customer",customerSchema)
 
